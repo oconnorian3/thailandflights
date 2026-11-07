@@ -5,8 +5,9 @@ legs = [
     {"departure_id": "DUB", "arrival_id": "BKK", "date": "2027-10-23"},
     {"departure_id": "HKT", "arrival_id": "DUB", "date": "2027-11-07"},
 ]
-r = requests.get("https://serpapi.com/search.json", timeout=60, params={
+r = requests.get("https://serpapi.com/search.json", timeout=120, params={
     "engine": "google_flights", "type": "3", "currency": "EUR", "hl": "en",
+    "deep_search": "true",
     "multi_city_json": json.dumps(legs),
     "api_key": os.environ["SERPAPI_KEY"],
 })
